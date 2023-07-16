@@ -380,7 +380,7 @@
       },
       body: avatarFile,
     });
-
+    
     const response = await fetch("/profile", {
       method: "PATCH",
       headers: {
@@ -458,11 +458,11 @@
   });
 </script> -->
 
-<!-- <script>
-  const form2 = document.querySelector("#change-cover");
+<script>
+  const changeCoverForm = document.querySelector("#change-cover");
   const message2 = document.querySelector("#message-2");
 
-  form2.addEventListener("submit", async (event) => {
+  changeCoverForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const file = document.querySelector("#file-input-2").files[0];
@@ -470,7 +470,7 @@
     const contentType = file.type;
 
     const urlRes = await fetch(
-      `/upload?fileName=${fileName}&contentType=${contentType}`,
+      `/get/preSignedURL?fileName=${fileName}&contentType=${contentType}`,
       {
         method: "GET",
       }
@@ -481,7 +481,7 @@
     const key = data.key;
     // Make sure the file type matches the content-type of your pre-signed URL
 
-    try {
+    // try {
       const response = await fetch(url, {
         method: "PUT",
         headers: {
@@ -489,18 +489,37 @@
         },
         body: file,
       });
-      if (response.ok) {
-        message2.textContent = "Image uploaded successfully!";
-        const result = await updateCoverImage(key);
+
+      const res = await fetch("/profile", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+        image: `https://d1ecyonmvcaoie.cloudfront.net/${data.fileName}`,
+      }),
+    });
+
+      const dat = await res.json();
+      if (dat._id) {
         window.location.reload(true);
       } else {
-        message2.textContent = `Error uploading image: ${response.statusText}`;
+        alert("Oops, something went wrong");
       }
-    } catch (error) {
-      message2.textContent = `Error uploading image: ${error}`;
-    }
+
+
+    //   if (response.ok) {
+    //     message2.textContent = "Image uploaded successfully!";
+    //     const result = await updateCoverImage(key);
+    //     window.location.reload(true);
+    //   } else {
+    //     message2.textContent = `Error uploading image: ${response.statusText}`;
+    //   }
+    // } catch (error) {
+    //   message2.textContent = `Error uploading image: ${error}`;
+    // }
   });
-</script> -->
+</script>
 
 <!-- <script>
   profileForm.addEventListener("submit", async (e) => {

@@ -1,8 +1,8 @@
-// AWS KEY: AKIAQ2TJILA4JDB3ERK2
-// AWS Secret: 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
+// AWS Access key - AKIA5LDN7LTI3VUIM7RZ
+// AWS Secret key - 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
 
 // 1. Bucket - Storage for application -> learnflow-resource-bucket
-// 2. CDN - https://d1ecyonmvcaoie.cloudfront.net -> Used to view/read any object inside the Bucket
+// 2. CDN - https://d26bftygyyz4u.cloudfront.net -> Used to view/read any object inside the Bucket
 // 3. Policy -> Set of Permissions define that anyone to whom this policy is attached they will have access to Bucket
 // 4. User -> Set of credentials / application to which policies are attached
 
