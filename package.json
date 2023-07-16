@@ -24,7 +24,7 @@
     "uuid": "^9.0.0"
   },
   "engines": {
-    "node": ">=NODE_JS_VERSION"
+    "node": ">=14.17.0"
 },
   "packageManager": "yarn@1.22.19",
   "devDependencies": {},
