@@ -1,8 +1,7 @@
 {
   "name": "web-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -24,5 +23,15 @@
     "passport-google-oauth20": "^2.0.0",
     "uuid": "^9.0.0"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasar03/Posting-Application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yasar03/Posting-Application/issues"
+  },
+  "homepage": "https://github.com/yasar03/Posting-Application#readme",
+  "description": ""
 }
