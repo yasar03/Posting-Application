@@ -17,8 +17,13 @@ const { v4: uuid } = require("uuid");
 const bucket = new S3Client({
   region: "ap-south-1",
   credentials: {
-      accessKeyId: 'AKIA5LDN7LTIQYSIKEJD',
-      secretAccessKey: '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'
+      // accessKeyId: 'AKIA5LDN7LTIQYSIKEJD',
+      // secretAccessKey: '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'
+      accessKeyId: 'AKIAQA6AJ7HU47TNSTYU',
+      secretAccessKey: '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'
+      
+      // accessKeyId: "AKIAQ2TJILA4JDB3ERK2",
+      // secretAccessKey: "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"
   },
 });
 
@@ -42,7 +47,7 @@ router.get("/get/preSignedURL", async (req, res) => {
     contentType.split("/")[1];
 
   const command = new PutObjectCommand({
-    Bucket: "learnflow-bucket-resource",
+    Bucket: "learnflow-bucket-resource-1",
     Key: fileName,
     ContentType: contentType,
   });
